@@ -8,6 +8,10 @@
 
         {!! Form::label('content', 'タスク:') !!}
         {!! Form::text('content') !!}
+        {!! Form::select('status', [
+            '◯' => '◯',
+            '☓' => '☓'
+        ]) !!}
 
         {!! Form::submit('投稿') !!}
 
