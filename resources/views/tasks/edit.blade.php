@@ -6,14 +6,23 @@
 
     {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
 
-        {!! Form::label('content', 'タスク:') !!}
-        {!! Form::text('content') !!}
-        {!! Form::select('status', [
-            '◯' => '◯',
-            '☓' => '☓'
-        ]) !!}
-
-        {!! Form::submit('更新') !!}
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                <div class="form-group">
+                    {!! Form::label('content', 'タスク:') !!}
+                    {!! Form::text('content', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('status', 'ステータス:') !!}
+                    {!! Form::select('status', [
+                        '未着手' => '未着手',
+                        '対応中' => '対応中',
+                        '完了' => '完了'
+                    ], null, ['class' => 'form-control']) !!}
+                </div>
+                {!! Form::submit('更新', ['class' => 'btn btn-default']) !!}
+            </div>
+        </div>
 
     {!! Form::close() !!}
 
